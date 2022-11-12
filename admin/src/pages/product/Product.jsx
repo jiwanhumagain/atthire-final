@@ -38,8 +38,8 @@ export default function Product() {
     const getStats = async () => {
       try {
         const res = await userRequest.get("orders/income?pid=" + productId);
-        const list = res.data.sort((a,b)=>{
-            return a._id - b._id
+        const list = res.data.sort((a, b) => {
+          return a._id - b._id
         })
         list.map((item) =>
           setPStats((prev) => [
@@ -68,46 +68,54 @@ export default function Product() {
         </div>
         <div className="productTopRight">
           <div className="productInfoTop">
-            <img src={product.img} alt="" className="productInfoImg" />
-            <span className="productName">{product.title}</span>
+            <img src="http://cdn.shopify.com/s/files/1/0035/1086/1935/products/Ayana-1_1024x.jpg?v=1596455382" alt="" className="productInfoImg" />
+            <span className="productName">Lehenga</span>
           </div>
           <div className="productInfoBottom">
             <div className="productInfoItem">
               <span className="productInfoKey">id:</span>
-              <span className="productInfoValue">{product._id}</span>
+              <span className="productInfoValue">10</span>
             </div>
             <div className="productInfoItem">
               <span className="productInfoKey">sales:</span>
               <span className="productInfoValue">5123</span>
             </div>
             <div className="productInfoItem">
+              <span className="productInfoKey">active:</span>
+              <span className="productInfoValue">yes</span>
+            </div>
+            <div className="productInfoItem">
               <span className="productInfoKey">in stock:</span>
-              <span className="productInfoValue">{product.inStock}</span>
+              <span className="productInfoValue">10</span>
             </div>
           </div>
         </div>
       </div>
       <div className="productBottom">
         <form className="productForm">
+
           <div className="productFormLeft">
             <label>Product Name</label>
-            <input type="text" placeholder={product.title} />
+            <input type="text" placeholder="kurti shirt" />
             <label>Product Description</label>
-            <input type="text" placeholder={product.desc} />
+            <input type="text" placeholder="this product has 100%pure cotton,very fashionable and a comfortable wear...." />
             <label>Price</label>
-            <input type="text" placeholder={product.price} />
+            <input type="text" placeholder=" Rs 999" />
             <label>In Stock</label>
             <select name="inStock" id="idStock">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
             </select>
           </div>
+
           <div className="productFormRight">
             <div className="productUpload">
-              <img src={product.img} alt="" className="productUploadImg" />
+              <img src="http://cdn.shopify.com/s/files/1/0035/1086/1935/products/Ayana-1_1024x.jpg?v=1596455382" alt="" className="productUploadImg" />
+
               <label for="file">
                 <Publish />
               </label>
+
               <input type="file" id="file" style={{ display: "none" }} />
             </div>
             <button className="productButton">Update</button>
