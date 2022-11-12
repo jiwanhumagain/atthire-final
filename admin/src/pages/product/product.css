@@ -19,6 +19,9 @@
   font-size: 16px;
   cursor: pointer;
 }
+.productName{
+  margin-left: 10px;
+}
 
 .productTop {
   display: flex;
